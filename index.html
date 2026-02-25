@@ -6,67 +6,234 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0;
-      color: #222;
-      background: #E0F4F3; /* Tiffany blue */
+    :root{
+      --tiffany:#81D8D0;
+      --tiffany-soft:#E0F4F3;
+      --text:#222;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --border:#e9eeee;
+      --link:#2a7a73;
     }
 
-    nav {
-      background: #ffffff;
-      border-bottom: 1px solid #dfeeee;
-      padding: 16px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      margin:0;
+      color:var(--text);
+      background:#fff;
     }
 
-    nav strong { font-size: 17px; }
-
-    nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #444;
-      font-size: 15px;
-    }
-    nav a:hover { color: #000; }
-
-    .container {
-      max-width: 1000px;
-      margin: 60px auto;
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 55px;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 60px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    /* NAV */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      padding:14px 48px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .profile img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      font-weight:600;
     }
 
-    .profile h2 { margin: 10px 0 5px; }
-    .profile p { margin: 5px 0; color: #666; font-size: 15px; }
-    .profile a { text-decoration: none; color: #0366d6; font-size: 14px; }
+    .nav-links a{
+      margin-left:18px;
+      text-decoration:none;
+      color:#444;
+      font-size:15px;
+    }
+    .nav-links a:hover{ color:#000; }
 
-    h1 { margin-top: 0; }
-    h3 { margin-top: 35px; }
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:54px 48px 64px;
+      display:grid;
+      grid-template-columns: 340px 1fr;
+      gap:56px;
+    }
 
-    ul { padding-left: 18px; }
-    li { margin-bottom: 7px; }
+    /* LEFT COLUMN */
+    .left{
+      text-align:center;
+    }
 
-    footer {
-      text-align: center;
-      color: #555;
-      font-size: 13px;
-      margin: 25px 0;
+    .avatar{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      object-fit:cover;
+      border:6px solid #f4f7f7;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      margin-top:18px;
+    }
+
+    .name{
+      font-size:44px;
+      margin:18px 0 6px;
+      letter-spacing:0.2px;
+    }
+
+    .role{
+      font-size:18px;
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+
+    .affil{
+      color:var(--link);
+      font-size:18px;
+      line-height:1.7;
+      margin:0;
+    }
+
+    .icons{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#1f4f4b;
+      background:#fff;
+    }
+    .icon-btn:hover{
+      border-color:#cfe7e6;
+      background:var(--tiffany-soft);
+    }
+
+    /* RIGHT COLUMN */
+    .section-title{
+      font-size:54px;
+      font-weight:500;
+      margin:10px 0 18px;
+      letter-spacing:0.2px;
+    }
+
+    .about p{
+      font-size:16px;
+      line-height:1.75;
+      color:#2b2b2b;
+      margin:0 0 14px;
+      max-width:860px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:44px;
+      margin-top:26px;
+    }
+
+    .subhead{
+      font-size:30px;
+      margin:0 0 10px;
+      font-weight:650;
+    }
+
+    ul{
+      margin:10px 0 0;
+      padding-left:18px;
+    }
+    li{
+      margin:8px 0;
+      line-height:1.55;
+    }
+
+    .edu-item{
+      display:flex;
+      gap:12px;
+      margin:10px 0 14px;
+    }
+
+    .cap{
+      width:26px;
+      height:26px;
+      margin-top:2px;
+      flex:0 0 auto;
+      color:#000;
+    }
+
+    .edu-title{
+      font-weight:650;
+      margin:0;
+    }
+    .edu-meta{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* PROJECTS */
+    .divider{
+      margin:34px 0 14px;
+      border-top:1px solid var(--border);
+    }
+
+    .projects h2{
+      font-size:30px;
+      margin:18px 0 10px;
+      font-weight:650;
+    }
+
+    .proj{
+      margin:14px 0 18px;
+    }
+    .proj b{
+      font-size:16px;
+    }
+    .proj p{
+      margin:8px 0 0;
+      line-height:1.7;
+      color:#2b2b2b;
+      font-size:15px;
+    }
+
+    /* CONTACT */
+    .contact{
+      margin-top:10px;
+      font-size:15px;
+      line-height:1.8;
+    }
+    .contact a{
+      color:#0366d6;
+      text-decoration:none;
+    }
+    .contact a:hover{ text-decoration:underline; }
+
+    footer{
+      text-align:center;
+      color:#666;
+      font-size:13px;
+      padding:24px 0 34px;
+      border-top:1px solid var(--border);
+    }
+
+    @media (max-width: 980px){
+      .wrap{
+        grid-template-columns:1fr;
+        padding:34px 18px 48px;
+      }
+      nav{ padding:12px 16px; }
+      .section-title{ font-size:44px; }
+      .name{ font-size:38px; }
+      .grid-2{ grid-template-columns:1fr; gap:26px; }
     }
   </style>
 </head>
@@ -74,79 +241,204 @@
 <body>
 
 <nav>
-  <strong>Surbhi Kumar, PhD Candidate</strong>
-  <div>
-    <a href="index.html">Home</a>
+  <div class="nav-left">
+    <span style="color:var(--tiffany); font-weight:750;">Home</span>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <!-- Keep minimal like you asked (no separate publications/projects pages) -->
+    <a href="https://scholar.google.com/citations?hl=en&user=QhLq_roAAAAJ" target="_blank">Google Scholar</a>
     <a href="cv.html">CV</a>
-    <a href="https://scholar.google.com/citations?hl=en&user=QhLq_roAAAAJ" target="_blank">Publications</a>
-    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<div class="container">
+<div class="wrap">
 
-  <div class="profile">
-    <!-- Put your photo in repo root as profile.jpg -->
-    <img src="profile.jpg" alt="Surbhi Kumar">
-    <h2>Surbhi Kumar</h2>
-    <p>PhD Candidate</p>
-    <p>Mathematics</p>
-    <p>The University of Texas at Dallas</p>
+  <!-- LEFT -->
+  <aside class="left">
+    <img class="avatar" src="profile.jpg" alt="Surbhi Kumar">
 
-    <p>
-      <a href="mailto:sxk230046@utdallas.edu">Email</a> ·
-      <a href="https://github.com/sur1294" target="_blank">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/surbhi-kumar-662492263" target="_blank">LinkedIn</a> ·
-      <a href="https://scholar.google.com/citations?hl=en&user=QhLq_roAAAAJ" target="_blank">Google Scholar</a>
-    </p>
-  </div>
+    <div class="name">Surbhi Kumar</div>
+    <div class="role">PhD Candidate</div>
 
-  <div>
-    <h1>Biography</h1>
-    <p>
-      I am a Ph.D. Candidate in Mathematics at The University of Texas at Dallas, specializing in
-      <b>Topological Data Analysis</b> and <b>Graph Representation Learning</b> for biomedical applications,
-      including brain network modeling and ligand-based virtual screening (LBVS) for drug discovery.
-    </p>
+    <p class="affil">The University of Texas at Dallas</p>
 
-    <h3>Research Interests</h3>
-    <ul>
-      <li>Graph Neural Networks</li>
-      <li>Topological Data Analysis</li>
-      <li>Graph Representation Learning</li>
-      <li>Machine Learning for Biomedicine</li>
-    </ul>
+    <div class="icons" aria-label="contact icons">
+      <a class="icon-btn" href="mailto:sxk230046@utdallas.edu" title="Email" aria-label="Email">
+        <!-- envelope -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2"/>
+          <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </a>
 
-    <h3>Selected Projects</h3>
+      <a class="icon-btn" href="https://github.com/sur1294" target="_blank" title="GitHub" aria-label="GitHub">
+        <!-- github -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.69-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.07 1.53 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.75-1.05 2.75-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.64 1.03 2.76 0 3.93-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.5-.01 2.84 0 .26.18.59.69.48A10.01 10.01 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
+        </svg>
+      </a>
 
-<p><b>TopU-LBVS: A Realistic Multi-Target Benchmark for Ligand-Based Virtual Screening (In Progress)</b><br>
-This collaborative project develops a realistic multi-target ligand-based virtual screening benchmark based on the TopU95 collection derived from CHEMBL35. My contribution focuses on designing a rigorous, domain-shift-aware benchmarking protocol that mitigates inflated performance caused by unrealistic decoys and biased train–test splits. The unified framework reduces artificial class separation and enables fair comparison across classical ML, GNNs, and foundation models, providing a faithful assessment of robustness and early enrichment in practical molecular discovery settings.
-</p>
+      <a class="icon-btn" href="https://www.linkedin.com/in/surbhi-kumar-662492263" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+        <!-- linkedin -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M6.5 8.5H3.5V20.5H6.5V8.5Z" fill="currentColor"/>
+          <path d="M5 3.5C3.9 3.5 3 4.4 3 5.5C3 6.6 3.9 7.5 5 7.5C6.1 7.5 7 6.6 7 5.5C7 4.4 6.1 3.5 5 3.5Z" fill="currentColor"/>
+          <path d="M20.5 20.5H17.5V14.2C17.5 12.7 17.5 10.8 15.5 10.8C13.5 10.8 13.2 12.4 13.2 14.1V20.5H10.2V8.5H13.1V10.1H13.2C13.6 9.4 14.7 8.3 16.6 8.3C19.7 8.3 20.5 10.4 20.5 13.2V20.5Z" fill="currentColor"/>
+        </svg>
+      </a>
 
-<br>
+      <a class="icon-btn" href="https://scholar.google.com/citations?hl=en&user=QhLq_roAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar">
+        <!-- simple "G" -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M12 4a8 8 0 1 0 8 8h-7v-3h10a10 10 0 1 1-3.2-7.2l-2.2 2.2A7 7 0 1 0 19 12h-7v-3h10" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </aside>
 
-<p><b>Same-Graph Cross-Task Transfer in GNNs (Under Review, ICML 2026)</b><br>
-Same-Graph Cross-Task Transfer in GNNs: Protocols and Predictors formalizes transfer between node classification and link prediction on the same graph under a leakage-free evaluation framework. The protocol fixes node and edge splits, excludes evaluated edges from message passing, and controls negative sampling to prevent artificial signal reuse. Results show transfer is directional and predictable, with NC to LP benefiting homophilic graphs, while LP to NC can induce negative transfer under naive reuse. The work also introduces the CoTask Score to measure shared encoder utility across tasks.
-</p>
+  <!-- RIGHT -->
+  <main>
+    <div class="section-title">About me</div>
 
-<br>
+    <div class="about">
+      <p>
+        I am a Ph.D. Candidate in Mathematics at The University of Texas at Dallas working in graph representation learning.
+        My research develops mathematically grounded frameworks that integrate Topological Data Analysis and spectral geometry
+        with deep learning models such as graph neural networks and graph transformers to encode multiscale structural
+        information in graph-structured data.
+      </p>
+      <p>
+        A central goal of my work is to translate topological descriptors into stable and interpretable representations that
+        improve learning under limited supervision and distribution shift, particularly in biomedical domains such as
+        functional brain networks and molecular graphs for ligand-based virtual screening.
+      </p>
+    </div>
 
-<p><b>Low-Shot Graph Learning with Topological and Spectral Embeddings (Accepted, LoG 2025)</b><br>
-This work studies graph classification under extreme label scarcity using explicit structural descriptors. Persistent homology–based Betti vectors and spectral density-of-states embeddings capture multiscale topology and diffusion geometry. A prototype-based framework with STAMP conditioning improves performance in label-starved regimes and demonstrates that principled structural priors enhance stability and generalization.
-</p>
+    <div class="grid-2">
+      <section>
+        <div class="subhead">Interests</div>
+        <ul>
+          <li>Graph Representation Learning</li>
+          <li>Topological Data Analysis</li>
+          <li>Spectral Geometry for Graphs</li>
+          <li>Graph Neural Networks and Graph Transformers</li>
+          <li>Reliable and Leakage-Free Evaluation Protocols</li>
+        </ul>
+      </section>
 
-<br>
+      <section>
+        <div class="subhead">Education</div>
 
-<p><b>Brain Network Graph Classification (Under Review, ICML 2026)</b><br>
-This project investigates how atlas choice affects downstream performance in functional brain network models. By introducing edge-based quadratic features that enhance structural expressiveness beyond node-level aggregation, the framework achieves consistent gains across multi-atlas baselines and highlights the importance of principled structural design in neuroscience-driven graph learning.
-</p>
+        <div class="edu-item">
+          <svg class="cap" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 2 8l10 5 10-5-10-5Z" fill="currentColor"/>
+            <path d="M6 10v6c0 1 3 3 6 3s6-2 6-3v-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <div>
+            <p class="edu-title">PhD in Mathematics, University of Texas at Dallas</p>
+            <p class="edu-meta">PhD Candidate</p>
+          </div>
+        </div>
 
-    <h3 id="contact">Contact</h3>
-    <p>
-      Email: <a href="mailto:sxk230046@utdallas.edu">sxk230046@utdallas.edu</a>
-    </p>
-  </div>
+        <div class="edu-item">
+          <svg class="cap" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 2 8l10 5 10-5-10-5Z" fill="currentColor"/>
+            <path d="M6 10v6c0 1 3 3 6 3s6-2 6-3v-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <div>
+            <p class="edu-title">MS in Data Science, University of Texas at Dallas</p>
+            <p class="edu-meta">Graduate program</p>
+          </div>
+        </div>
 
+        <div class="edu-item">
+          <svg class="cap" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 2 8l10 5 10-5-10-5Z" fill="currentColor"/>
+            <path d="M6 10v6c0 1 3 3 6 3s6-2 6-3v-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <div>
+            <p class="edu-title">Bachelor’s Degree, India</p>
+            <p class="edu-meta">Mathematics background</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+
+      <div class="proj">
+        <b>TopU-LBVS: A Realistic Multi-Target Benchmark for Ligand-Based Virtual Screening (In Progress)</b>
+        <p>
+          This collaborative project develops a realistic multi-target ligand-based virtual screening benchmark based on the
+          TopU95 collection derived from CHEMBL35. My contribution focuses on designing a rigorous, domain-shift-aware
+          benchmarking protocol that mitigates inflated performance caused by unrealistic decoys and biased train–test splits.
+          The unified framework reduces artificial class separation and enables fair comparison across classical ML, GNNs,
+          and foundation models, providing a faithful assessment of robustness and early enrichment in practical molecular
+          discovery settings.
+        </p>
+      </div>
+
+      <div class="proj">
+        <b>Same-Graph Cross-Task Transfer in GNNs (Under Review, ICML 2026)</b>
+        <p>
+          Same-Graph Cross-Task Transfer in GNNs: Protocols and Predictors formalizes transfer between node classification
+          and link prediction on the same graph under a leakage-free evaluation framework. The protocol fixes node and edge
+          splits, excludes evaluated edges from message passing, and controls negative sampling to prevent artificial signal
+          reuse. Results show transfer is directional and predictable, with NC to LP benefiting homophilic graphs, while
+          LP to NC can induce negative transfer under naive reuse. The work also introduces the CoTask Score to measure
+          shared encoder utility across tasks.
+        </p>
+      </div>
+
+      <div class="proj">
+        <b>Low-Shot Graph Learning with Topological and Spectral Embeddings (Accepted, LoG 2025)</b>
+        <p>
+          This work studies graph classification under extreme label scarcity using explicit structural descriptors.
+          Persistent homology based Betti vectors and spectral density-of-states embeddings capture multiscale topology and
+          diffusion geometry. A prototype-based framework with STAMP conditioning improves performance in label-starved
+          regimes and demonstrates that principled structural priors enhance stability and generalization.
+        </p>
+      </div>
+
+      <div class="proj">
+        <b>Brain Network Graph Classification (Under Review, ICML 2026)</b>
+        <p>
+          This project investigates how atlas choice affects downstream performance in functional brain network models.
+          By introducing edge-based quadratic features that enhance structural expressiveness beyond node-level aggregation,
+          the framework achieves consistent gains across multi-atlas baselines and highlights the importance of principled
+          structural design in neuroscience-driven graph learning.
+        </p>
+      </div>
+
+      <div class="proj">
+        <b>Interfaces and Reformulations for Robust Graph Learning (Collaborative ICML Submissions)</b>
+        <p>
+          This line of work explores alternative representations and problem formulations for structure-aware graph learning.
+          GraphMind proposes a reproducible topology-to-language interface that translates structural evidence into concise
+          node descriptions embedded by frozen language models. DuoLink reformulates link prediction as node classification
+          on the line graph, aligning message passing with edge neighborhoods and capturing edge motifs directly.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact" class="contact">
+      <div class="subhead" style="margin-top:0;">Contact</div>
+      Email: <a href="mailto:sxk230046@utdallas.edu">sxk230046@utdallas.edu</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/surbhi-kumar-662492263" target="_blank">surbhi-kumar-662492263</a><br>
+      Google Scholar: <a href="https://scholar.google.com/citations?hl=en&user=QhLq_roAAAAJ" target="_blank">Profile</a>
+    </section>
+
+  </main>
 </div>
 
 <footer>
